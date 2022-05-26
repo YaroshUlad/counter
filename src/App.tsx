@@ -24,7 +24,7 @@ function App() {
         <button onClick={decreaseHandler}>decrease</button>
         <button onClick={resetToMin}>reset</button>
         <button>set</button>*/}
-        <SecondVariant min={min} max={max} value={value}/>
+        <SecondVariant />
     </div>
   );
 }
