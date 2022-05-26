@@ -7,7 +7,7 @@ export type ActionType = setMinAT | setMaxAT
 
 const initialState = {
     min: 0,
-    max: 0,
+    max: 1,
     value: '0'
 }
 

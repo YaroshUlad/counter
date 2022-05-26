@@ -17,7 +17,7 @@ const mapDispatchToProps = (dispatch: (action: ActionType) => void) => {
     }
     return {
         setMin: setMinCallback,
-        seMax: setMaxCallback
+        setMax: setMaxCallback
     }
 }
 
