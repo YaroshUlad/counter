@@ -1,9 +1,9 @@
-type SecondStateType = {
+export type SecondStateType = {
     min: number,
     max: number,
     value: string
 }
-type ActionType = setMinAT | setMaxAT
+export type ActionType = setMinAT | setMaxAT
 
 const initialState = {
     min: 0,
