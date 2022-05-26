@@ -9,10 +9,10 @@ const mapStateToProps = (state: SecondStateType) => {
     }
 }
 const mapDispatchToProps = (dispatch: (action: ActionType) => void) => {
-    const setMinCallback = (newMinValue: number) => {
+    const setMinCallback = (newMinValue: string) => {
         dispatch(setMinAC(newMinValue))
     }
-    const setMaxCallback = (newMaxValue: number) => {
+    const setMaxCallback = (newMaxValue: string) => {
         dispatch(setMaxAC(newMaxValue))
     }
     return {
