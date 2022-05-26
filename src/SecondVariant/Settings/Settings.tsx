@@ -17,6 +17,9 @@ export const Settings = (props: SettingsPropsType) => {
         const newMin = e.currentTarget.value
         props.setMin(newMin)
     }
+    const setSettings = () => {
+
+    }
     return (
         <div className={s.wrapper}>
             <div className={s.window}>
@@ -35,8 +38,8 @@ export const Settings = (props: SettingsPropsType) => {
                 </div>
             </div>
             <div className={s.buttonsArea}>
-                <Button title={'Set'} callback={() => {
-                }}/>
+                <Button title={'Set'}
+                        callback={setSettings}/>
             </div>
 
         </div>
