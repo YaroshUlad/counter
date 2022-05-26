@@ -1,6 +1,6 @@
 import {connect} from "react-redux";
 import {Settings} from "./Settings";
-import {ActionType, SecondStateType, setMaxAC, setMinAC} from "../../redux/secondVarReducer";
+import {ActionType, SecondStateType, setMaxAC, setMinAC, setSettingsAC} from "../../redux/secondVarReducer";
 
 const mapStateToProps = (state: SecondStateType) => {
     return {
@@ -17,7 +17,8 @@ const mapDispatchToProps = (dispatch: (action: ActionType) => void) => {
     }
     return {
         setMin: setMinCallback,
-        setMax: setMaxCallback
+        setMax: setMaxCallback,
+        saveSettings: () => dispatch(setSettingsAC())
     }
 }
 

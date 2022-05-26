@@ -9,7 +9,7 @@ export type ActionType = setMinAT | setMaxAT | setSettingsAT
 
 const initialState = {
     min: '0',
-    max: '1',
+    max: '0',
     value: '0',
     minValue: '',
     maxValue: ''
@@ -41,7 +41,7 @@ const SET_SETTINGS = 'SET_SETTINGS'
 export const setSettingsAC = () => {
     return {
         type: SET_SETTINGS,
-    }as const
+    } as const
 }
 type setSettingsAT = ReturnType<typeof setSettingsAC>
 

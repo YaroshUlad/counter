@@ -2,6 +2,13 @@ import React from 'react';
 import s from './Counter.module.css'
 import {Button} from "../../components/Button";
 
+type CounterPropsType = {
+    value: string
+    increase: ()=>void,
+    decrease: ()=>void,
+    reset: ()=>void
+}
+
 export const Counter = () => {
 
     const increase = () => {

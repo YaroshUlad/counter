@@ -7,6 +7,7 @@ type SettingsPropsType = {
     max: string
     setMin: (newMin: string) => void
     setMax: (newMax: string) => void
+    saveSettings: () => void
 }
 export const Settings = (props: SettingsPropsType) => {
     const onMaxChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -18,7 +19,7 @@ export const Settings = (props: SettingsPropsType) => {
         props.setMin(newMin)
     }
     const setSettings = () => {
-
+        props.saveSettings()
     }
     return (
         <div className={s.wrapper}>
