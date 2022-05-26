@@ -1,6 +1,7 @@
 import React from 'react';
 import { Monitor } from './Monitor/Monitor';
 import {Settings} from "./Settings/Settings";
+import {Counter} from "./Counter/Counter";
 
 type SecondVariantPropsType = {
     min: number
@@ -12,7 +13,8 @@ export const SecondVariant: React.FC<SecondVariantPropsType> = ({}) => {
     return (
         <div>
             <Settings/>
-            <Monitor/>
+            {/*<Monitor/>*/}
+            <Counter/>
         </div>
     );
 };
