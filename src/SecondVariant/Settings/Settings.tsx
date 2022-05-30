@@ -1,6 +1,8 @@
 import React, {ChangeEvent} from 'react';
 import s from './Settings.module.css'
 import {Button} from "../../components/Button";
+import {useDispatch} from "react-redux";
+import {setMaxAC, setMinAC} from "../../redux/secondVarReducer";
 
 type SettingsPropsType = {
     value: string
@@ -11,15 +13,20 @@ type SettingsPropsType = {
     saveSettings: () => void
 }
 export const Settings = (props: SettingsPropsType) => {
+
+    const dispatch = useDispatch()
+
     const disableSettings = (isNaN(+props.value)&&props.value!== 'Set')||props.min===''||props.max===''
 
     const onMaxChange = (e: ChangeEvent<HTMLInputElement>) => {
         const newMax = e.currentTarget.value
-        props.setMax(newMax)
+        //props.setMax(newMax)
+        dispatch(setMaxAC(newMax))
     }
     const onMinChange = (e: ChangeEvent<HTMLInputElement>) => {
         const newMin = e.currentTarget.value
-        props.setMin(newMin)
+        //props.setMin(newMin)
+        dispatch(setMinAC(newMin))
     }
     const setSettings = () => {
         props.saveSettings()
