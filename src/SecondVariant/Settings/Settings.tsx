@@ -2,7 +2,7 @@ import React, {ChangeEvent} from 'react';
 import s from './Settings.module.css'
 import {Button} from "../../components/Button";
 import {useDispatch} from "react-redux";
-import {setMaxAC, setMinAC} from "../../redux/secondVarReducer";
+import {setMaxAC, setMinAC, setSettingsAC} from "../../redux/secondVarReducer";
 
 type SettingsPropsType = {
     value: string
@@ -29,7 +29,8 @@ export const Settings = (props: SettingsPropsType) => {
         dispatch(setMinAC(newMin))
     }
     const setSettings = () => {
-        props.saveSettings()
+        //props.saveSettings()
+        dispatch(setSettingsAC())
     }
     return (
         <div className={s.wrapper}>
