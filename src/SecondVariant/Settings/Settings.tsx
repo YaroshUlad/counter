@@ -1,8 +1,8 @@
 import React, {ChangeEvent} from 'react';
 import s from './Settings.module.css'
 import {Button} from "../../components/Button";
-import {useDispatch} from "react-redux";
-import {setMaxAC, setMinAC, setSettingsAC} from "../../redux/secondVarReducer";
+import {useDispatch, useSelector} from "react-redux";
+import {getMax, getMin, getValue, setMaxAC, setMinAC, setSettingsAC} from "../../redux/secondVarReducer";
 
 type SettingsPropsType = {
     value: string
@@ -13,10 +13,12 @@ type SettingsPropsType = {
     saveSettings: () => void
 }
 export const Settings = (props: SettingsPropsType) => {
-
+    const min = useSelector(getMin)
+    const max = useSelector(getMax)
+    const value = useSelector(getValue)
     const dispatch = useDispatch()
 
-    const disableSettings = (isNaN(+props.value)&&props.value!== 'Set')||props.min===''||props.max===''
+    const disableSettings = (isNaN(+value) && value !== 'Set') || min === '' || max === ''
 
     const onMaxChange = (e: ChangeEvent<HTMLInputElement>) => {
         const newMax = e.currentTarget.value
@@ -38,13 +40,13 @@ export const Settings = (props: SettingsPropsType) => {
                 <div>
                     max
                     <input onChange={onMaxChange}
-                           value={props.max}
+                           value={max}
                            type="number"/>
                 </div>
                 <div>
                     min
                     <input onChange={onMinChange}
-                           value={props.min}
+                           value={min}
                            type="number"/>
                 </div>
             </div>

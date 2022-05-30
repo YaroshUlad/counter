@@ -124,3 +124,7 @@ export const secondVarReducer = (state: SecondStateType = initialState, action: 
             return state
     }
 }
+
+export const getMin = (state: SecondStateType) => state.min
+export const getMax = (state: SecondStateType) => state.max
+export const getValue = (state: SecondStateType) => state.value
