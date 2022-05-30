@@ -3,6 +3,7 @@ import s from './Settings.module.css'
 import {Button} from "../../components/Button";
 
 type SettingsPropsType = {
+    value: string
     min: string
     max: string
     setMin: (newMin: string) => void
@@ -10,6 +11,8 @@ type SettingsPropsType = {
     saveSettings: () => void
 }
 export const Settings = (props: SettingsPropsType) => {
+    const disableSettings = (isNaN(+props.value)&&props.value!== 'Set')||props.min===''||props.max===''
+
     const onMaxChange = (e: ChangeEvent<HTMLInputElement>) => {
         const newMax = e.currentTarget.value
         props.setMax(newMax)
@@ -34,12 +37,12 @@ export const Settings = (props: SettingsPropsType) => {
                     min
                     <input onChange={onMinChange}
                            value={props.min}
-                           min={0}
                            type="number"/>
                 </div>
             </div>
             <div className={s.buttonsArea}>
-                <Button title={'Set'}
+                <Button disabled={disableSettings}
+                        title={'Set'}
                         callback={setSettings}/>
             </div>
 

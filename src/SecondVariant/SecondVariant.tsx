@@ -1,7 +1,7 @@
 import React from 'react';
 import s from './SecondVariant.module.css'
 import {SettingsContainer} from "./Settings/SettingsContainer";
-import {CounterContainer} from "./Counter/CounterConteiner";
+import {CounterContainer} from "./Counter/CounterContainer";
 
 type SecondVariantPropsType = {
 }

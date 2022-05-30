@@ -4,30 +4,44 @@ import {Button} from "../../components/Button";
 
 type CounterPropsType = {
     value: string
-    increase: ()=>void,
-    decrease: ()=>void,
-    reset: ()=>void
+    minValue: string,
+    maxValue: string
+    increase: (value: string) => void,
+    decrease: (value: string) => void,
+    reset: () => void
 }
 
-export const Counter = () => {
+export const Counter = (props: CounterPropsType) => {
 
     const increase = () => {
+        if (props.value < props.maxValue) {
+            const newValue = String(Number(props.value) + 1)
+            props.increase(newValue)
+        }
     }
     const decrease = () => {
+        if (props.value > props.minValue) {
+            const newValue = String(Number(props.value) - 1)
+            props.decrease(newValue)
+        }
     }
     const reset = () => {
+        if (props.value > props.minValue) {
+            props.reset()
+        }
     }
-
+    const a = props.value === props.maxValue || isNaN(+props.value)
+    const c = props.value === props.minValue || isNaN(+props.value)
 
     return (
         <div className={s.wrapper}>
-            <div className={s.monitor}>
-                monitor
+            <div className={`${s.monitor} ${a ? s.error : ''}`}>
+                {props.value}
             </div>
             <div className={s.buttonArea}>
-                <Button title={'inc'} callback={increase}/>
-                <Button title={'dec'} callback={decrease}/>
-                <Button title={'reset'} callback={reset}/>
+                <Button disabled={a} title={'inc'} callback={increase}/>
+                <Button disabled={c} title={'dec'} callback={decrease}/>
+                <Button disabled={c} title={'reset'} callback={reset}/>
             </div>
         </div>
     );

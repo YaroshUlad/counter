@@ -6,6 +6,7 @@
     padding: 10px;
     align-items: center;
     margin-right: 20px;
+    background-color: #69e7bb;
 
 }
 .window{
@@ -18,6 +19,7 @@
     width: 90%;
     align-items: center;
     text-align: center;
+    background-color: aquamarine;
 }
 .buttonsArea {
     display: flex;
@@ -27,6 +29,7 @@
     padding: 10px;
     width: 90%;
     align-items: center;
+    background-color: aquamarine;
 }
 .window div:first-child{
     margin-bottom: 5px;

@@ -6,6 +6,7 @@ const mapStateToProps = (state: SecondStateType) => {
     return {
         min: state.min,
         max: state.max,
+        value: state.value
     }
 }
 const mapDispatchToProps = (dispatch: (action: ActionType) => void) => {
