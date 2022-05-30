@@ -3,7 +3,7 @@ import s from './Settings.module.css'
 import {Button} from "../../components/Button";
 import {useDispatch, useSelector} from "react-redux";
 import {getMax, getMin, getValue, setMaxAC, setMinAC, setSettingsAC} from "../../redux/secondVarReducer";
-
+/*
 type SettingsPropsType = {
     value: string
     min: string
@@ -11,8 +11,8 @@ type SettingsPropsType = {
     setMin: (newMin: string) => void
     setMax: (newMax: string) => void
     saveSettings: () => void
-}
-export const Settings = (props: SettingsPropsType) => {
+}*/
+export const Settings = (/*props: SettingsPropsType*/) => {
     const min = useSelector(getMin)
     const max = useSelector(getMax)
     const value = useSelector(getValue)
