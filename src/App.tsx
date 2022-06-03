@@ -4,11 +4,11 @@ import {SecondVariant} from "./SecondVariant/SecondVariant";
 
 function App() {
 
-  return (
-    <div className="App">
-        <SecondVariant />
-    </div>
-  );
+    return (
+        <div className="App">
+            <SecondVariant/>
+        </div>
+    );
 }
 
 export default App;

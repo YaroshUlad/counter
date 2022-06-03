@@ -110,7 +110,7 @@ export const secondVarReducer = (state: SecondStateType = initialState, action: 
                 return {...state, max: action.payload.newMax}
             } else if (+action.payload.newMax <= +state.min) {
                 state.value = 'max can not be smaller or equal than min'
-            }else {
+            } else {
                 state.value = 'Set'
             }
             return {...state, max: action.payload.newMax}
@@ -127,6 +127,6 @@ export const secondVarReducer = (state: SecondStateType = initialState, action: 
     }
 }
 
-export const getMin = (state: AppStateType ) => state.secondVariant.min
+export const getMin = (state: AppStateType) => state.secondVariant.min
 export const getMax = (state: AppStateType) => state.secondVariant.max
 export const getValue = (state: AppStateType) => state.secondVariant.value

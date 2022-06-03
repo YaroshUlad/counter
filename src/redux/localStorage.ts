@@ -1,4 +1,3 @@
-
 // ___________load state________
 
 import {AppStateType} from "./store";
