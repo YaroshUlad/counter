@@ -3,7 +3,7 @@ import s from './Counter.module.css'
 import {Button} from "../../components/Button";
 import {useDispatch, useSelector} from "react-redux";
 import {AppStateType} from "../../redux/store";
-import {decreaseValueAC, increaseValueAC} from "../../redux/secondVarReducer";
+import {decreaseValueAC, increaseValueAC, resetValueAC} from "../../redux/secondVarReducer";
 
 /*type CounterPropsType = {
     value: string
@@ -33,8 +33,8 @@ export const Counter = (/*props: CounterPropsType*/) => {
         }
     }
     const reset = () => {
-        if (props.value > props.minValue) {
-            props.reset()
+        if (value > minValue) {
+            dispatch(resetValueAC())
         }
     }
     const a = props.value === props.maxValue || isNaN(+props.value)
