@@ -1,3 +1,5 @@
+import {AppStateType} from "./store";
+
 export type SecondStateType = {
     min: string,
     max: string,
@@ -125,6 +127,6 @@ export const secondVarReducer = (state: SecondStateType = initialState, action: 
     }
 }
 
-export const getMin = (state: SecondStateType) => state.min
-export const getMax = (state: SecondStateType) => state.max
-export const getValue = (state: SecondStateType) => state.value
+export const getMin = (state: AppStateType ) => state.secondVariant.min
+export const getMax = (state: AppStateType) => state.secondVariant.max
+export const getValue = (state: AppStateType) => state.secondVariant.value
