@@ -5,14 +5,14 @@ import {
     decreaseValueAC,
     increaseValueAC,
     resetValueAC,
-    SecondStateType
 } from "../../redux/secondVarReducer";
+import {AppStateType} from "../../redux/store";
 
-const mapState = (state: SecondStateType) => {
+const mapState = (state: AppStateType) => {
     return {
-        value: state.value,
-        minValue: state.minValue,
-        maxValue: state.maxValue
+        value: state.secondVariant.value,
+        minValue: state.secondVariant.minValue,
+        maxValue: state.secondVariant.maxValue
     }
 }
 
