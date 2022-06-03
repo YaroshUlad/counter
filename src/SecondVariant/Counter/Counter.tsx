@@ -37,13 +37,13 @@ export const Counter = (/*props: CounterPropsType*/) => {
             dispatch(resetValueAC())
         }
     }
-    const a = props.value === props.maxValue || isNaN(+props.value)
-    const c = props.value === props.minValue || isNaN(+props.value)
+    const a = value === maxValue || isNaN(+value)
+    const c = value === minValue || isNaN(+value)
 
     return (
         <div className={s.wrapper}>
             <div className={`${s.monitor} ${a ? s.error : ''}`}>
-                {props.value}
+                {value}
             </div>
             <div className={s.buttonArea}>
                 <Button disabled={a} title={'inc'} callback={increase}/>
