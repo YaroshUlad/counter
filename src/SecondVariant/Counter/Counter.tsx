@@ -1,20 +1,19 @@
-import React, {Dispatch} from 'react';
+import React from 'react';
 import s from './Counter.module.css'
 import {Button} from "../../components/Button";
 import {useDispatch, useSelector} from "react-redux";
-import {ActionType} from "../../redux/secondVarReducer";
 import {AppStateType} from "../../redux/store";
 
-type CounterPropsType = {
+/*type CounterPropsType = {
     value: string
     minValue: string,
     maxValue: string
     increase: (value: string) => void,
     decrease: (value: string) => void,
     reset: () => void
-}
+}*/
 
-export const Counter = (props: CounterPropsType) => {
+export const Counter = (/*props: CounterPropsType*/) => {
     const dispatch = useDispatch()
     const value = useSelector<AppStateType, string>(state => state.secondVariant.value)
     const minValue = useSelector<AppStateType, string>(state => state.secondVariant.minValue)
